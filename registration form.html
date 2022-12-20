@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+<script type="text/javascript">
+	function verify()
+	{
+		var name = document.getElementById("name");
+		var gender = document.getElementsByName("gender");
+		var edu = document.getElementById("edu");
+		var DOB = document.getElementById("DOB");
+		var contact = document.getElementById("contact");
+		var Address = document.getElementById("Address");
+		var msg = new Array();
+		var flag = 1;
+		var message = "following details are required\n";
+
+		if (name.value=="")
+		{
+			msg[0] = "name is required";
+			flag = 0;
+		}
+		else{msg[0]="";}
+
+		
+		if (gender[0].checked == false && gender[1].checked == false)
+		{
+			msg[1]= "select gender";
+			flag = 0;
+		}
+		else{ msg[1] = "";}
+
+
+		if (edu.value=="") 
+		{
+			msg[2] = "Education Qualification is required";
+			flag = 0;
+		}
+		else{ msg[2] = "";}
+
+
+		
+		if (DOB.value=="") 
+		{
+			msg[3] = "DOB is required";
+			flag = 0;
+		}
+		else{ msg[3]="";}
+
+
+		if (contact.value=="")
+		{
+			msg[4] ="contact number is required";
+			flag = 0;
+		}
+		else{ msg[4]="";}
+
+
+		if (Address.value=="") 
+		{
+			msg[5] ="Address is required";
+			flag = 0;
+		}
+		else{ msg[5]="";}
+
+
+		if (flag == 0) 
+		{
+			// Show Error Messages
+			// alert(msg[0]+'\n'+ msg[1]+'\n'+ msg[2]+'\n'+ msg[3]+'\n'+ msg[4]+'\n'+);
+			for (var x=0;x<=5;x++)
+			{
+				if (msg[x] !="") 
+				{
+					message += msg[x] +"\n";
+				}
+			}
+			alert(message);
+			document.getElementById("abc").innerHTML = message;
+			return false
+		}
+		else
+		{
+			return true;
+		}
+
+	}
+</script>
+</head>
+<body style="background-color: skyblue;">
+<div align="center">
+		<br>
+		<bt>
+		<br>
+		<h1 style="color:orange;"><i>GYM MEMBERSHIP REGISTRATION FORM</i></h1>
+		<h2 id ="abc"></h2> 
+		<form method="post" action="" onsubmit="return verify()">
+			<table border="15" cellpadding="10" cellspacing="10">
+				<tr>
+					<td colspan="2" align="center">* All fields are mandatory</td>
+				</tr>
+
+				<tr>
+					<td><input type="text" name="name" id="name" size="25" placeholder="Enter Name"/></td>
+				</tr>
+
+				<tr>
+					<td>Gender:</td>
+				    <td><input type="radio" name="gender" value="Male"/> Male
+						<input type="radio" name="gender" value="Female"/> Female
+					</td>
+				</tr>
+
+				<tr>
+					<td><input type="text" name="Education Qualification" id="edu" size="17" placeholder="Education Qualification"></td>
+				</tr7
+				
+				<tr>
+					<td><input type="text" name="DOB" id="DOB" size="8" placeholder="Enter DOB"/></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" name="content no" id="contact" size="10" placeholder="Contact number"/></td>
+				</tr>
+
+				<tr>
+					<td>Address:</td>
+					<td><input type="text" name="Address" size="50" id="Address" placeholder="Enter Address"></td>
+				</tr>
+
+				<tr>
+					<td align="Right side" colspan="2">
+					<input type="submit" value="REGISTER"/>
+					<input type="reset" value="CLEAR"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+</div>
+<footer>
+	<div align="center">
+<h3>		&copy; 2022-23 | Name: KASHAF KHAN | USN NO: EE21D030 | Depratment: Electrical Engineering | Collage: S.B. Jain Institute of Technology, Management & Research.</h3>
+	</div>
+</footer>
+</body>
+</html>
